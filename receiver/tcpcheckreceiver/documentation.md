@@ -18,7 +18,7 @@ Measures the duration of TCP connection.
 
 | Unit | Metric Type | Value Type |
 | ---- | ----------- | ---------- |
-| ms | Gauge | Int |
+| ns | Gauge | Int |
 
 #### Attributes
 
@@ -32,21 +32,21 @@ Records errors occurring during TCP check.
 
 | Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
 | ---- | ----------- | ---------- | ----------------------- | --------- |
-| {error} | Sum | Int | Cumulative | false |
+| {error} | Sum | Int | Cumulative | true |
 
 #### Attributes
 
 | Name | Description | Values |
 | ---- | ----------- | ------ |
-| error.message | Error message recorded during check | Any Str |
+| tcp.endpoint | Full TCO endpoint | Any Str |
 
 ### tcpcheck.status
 
 1 if the TCP client successfully connected, otherwise 0.
 
-| Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
-| ---- | ----------- | ---------- | ----------------------- | --------- |
-| 1 | Sum | Int | Cumulative | false |
+| Unit | Metric Type | Value Type |
+| ---- | ----------- | ---------- |
+| 1 | Gauge | Int |
 
 #### Attributes
 
