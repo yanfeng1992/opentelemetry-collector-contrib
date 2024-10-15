@@ -44,7 +44,7 @@ func createMetricsReceiver(_ context.Context, params receiver.Settings, rConf co
 	}
 
 	tcpCheckScraper := newScraper(cfg, params)
-	scraper, err := scraperhelper.NewScraper(metadata.Type.String(), tcpCheckScraper.scrape, scraperhelper.WithStart(tcpCheckScraper.start))
+	scraper, err := scraperhelper.NewScraper(metadata.Type, tcpCheckScraper.scrape, scraperhelper.WithStart(tcpCheckScraper.start))
 	if err != nil {
 		return nil, err
 	}
